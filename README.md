@@ -4,6 +4,8 @@ RADcam is an open-source Expo + React Native iOS project that demonstrates synch
 
 > No binary artifacts are included. All camera, rendering, and bridge logic is in readable Swift, Metal, and TypeScript source.
 
+> ⚠️ Expo Go is **not** enough for this app, because this project ships custom native Swift/Metal modules. Use a custom development build (local Xcode build or EAS cloud build).
+
 ## Features
 
 - Rear camera capability detection (single / dual / multicam fallback)
@@ -107,6 +109,38 @@ npm run bootstrap
 npm run run:ios
 ```
 
+## Running without a MacBook (Windows/Linux supported)
+
+You can ship and test this on iPhone without owning a Mac by using **EAS Build** (cloud iOS builds):
+
+1. Install dependencies and sign in to Expo:
+
+```bash
+npm install
+npx eas login
+```
+
+2. Trigger a cloud iOS development build:
+
+```bash
+npm run cloud:ios
+# or: npx eas build --platform ios --profile development
+```
+
+3. Install the generated development build on your iPhone (via EAS link / QR / TestFlight depending on your account setup).
+
+4. Start Metro locally and show the dev-client QR code:
+
+```bash
+npx expo start --dev-client --tunnel
+```
+
+5. Scan the QR with your iPhone Camera and open the installed RADcam development build.
+
+This gives you full native module support (AVFoundation + Metal) without local Xcode compilation.
+
+![Step 0 - No Mac cloud build flow](docs/screenshots/step0-no-mac-cloud-build.svg)
+
 ## Run on iPhone via QR code (dev client workflow)
 
 Because RADcam includes native Swift/Metal code, it cannot run in Expo Go. Use an Expo development build and then launch through a QR code:
@@ -157,6 +191,35 @@ Potential additions:
 - temporal denoising kernel
 - depth-aware compositing (LiDAR-capable devices)
 - RTMP/WebRTC live stream output path
+
+## Troubleshooting
+
+### "I don't see a QR code"
+
+- Ensure you started Metro with dev-client mode:
+
+```bash
+npx expo start --dev-client --tunnel
+```
+
+- In the Expo terminal UI, ensure it is showing a dev build target (not Expo Go).
+- If your network is restricted, keep `--tunnel` enabled.
+
+### "Swift conflict" / iOS native build errors
+
+Common reset sequence:
+
+```bash
+rm -rf ios Pods Podfile.lock
+npx expo prebuild --clean
+cd ios && pod install && cd ..
+```
+
+Then rebuild the development client. If you are not on macOS, use cloud builds (`npm run cloud:ios`).
+
+### "Can I run this in Expo Go?"
+
+No. Expo Go cannot load arbitrary custom native Swift/Metal modules from this repository. Use a custom dev build (local or EAS cloud).
 
 ## Important notes
 

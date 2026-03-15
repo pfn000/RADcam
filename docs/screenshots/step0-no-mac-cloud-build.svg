@@ -1,0 +1,10 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1170' height='720'>
+  <rect width='1170' height='720' fill='#0a0f1e'/>
+  <rect x='40' y='40' width='1090' height='640' rx='24' fill='url(#g)'/>
+  <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='#13213f'/><stop offset='100%' stop-color='#223a73'/></linearGradient></defs>
+  <text x='84' y='130' fill='#e8efff' font-size='52' font-family='Arial'>Step 0 — No MacBook Flow (Cloud Build)</text>
+  <text x='98' y='230' fill='#e8efff' font-size='34' font-family='Arial'>• npm install && npx eas login</text>
+  <text x='98' y='290' fill='#e8efff' font-size='34' font-family='Arial'>• npx eas build --platform ios --profile development</text>
+  <text x='98' y='350' fill='#e8efff' font-size='34' font-family='Arial'>• Install build on iPhone, then scan Metro QR</text>
+  <text x='84' y='640' fill='#95b0ff' font-size='24' font-family='Arial'>RADcam • Works from Windows/Linux/macOS via EAS Build</text>
+</svg>

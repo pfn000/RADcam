@@ -9,6 +9,9 @@
     "prebuild": "expo prebuild --clean",
     "typecheck": "tsc --noEmit",
     "bootstrap": "bash ./scripts/bootstrap.sh",
+    "run:ios": "bash ./scripts/run-ios.sh",
+    "cloud:ios": "bash ./scripts/cloud-ios-build.sh",
+    "android": "expo run:android"
     "run:ios": "bash ./scripts/run-ios.sh"
   },
   "dependencies": {
@@ -16,6 +19,8 @@
     "expo-dev-client": "~4.0.29",
     "expo-modules-core": "^1.12.18",
     "react": "18.2.0",
+    "react-native": "0.74.5",
+    "radcam-multicam": "file:modules/radcam-multicam"
     "react-native": "0.74.5"
   },
   "devDependencies": {
