@@ -107,6 +107,36 @@ npm run bootstrap
 npm run run:ios
 ```
 
+## Run on iPhone via QR code (dev client workflow)
+
+Because RADcam includes native Swift/Metal code, it cannot run in Expo Go. Use an Expo development build and then launch through a QR code:
+
+1. Build/install the dev client once:
+
+```bash
+npx expo prebuild --clean
+npx expo run:ios --device
+```
+
+2. Start the Metro server and generate a QR code:
+
+```bash
+npx expo start --dev-client --tunnel
+```
+
+3. On your iPhone, scan the QR code with Camera and tap the banner to open RADcam in the installed dev client.
+
+### QR setup screenshots
+
+#### Step 1: Start the Expo dev server
+![Step 1 - Start Expo dev server](docs/screenshots/step1-open-dev-server.svg)
+
+#### Step 2: Scan the QR code on iPhone
+![Step 2 - Scan QR code](docs/screenshots/step2-scan-qr.svg)
+
+#### Step 3: Open RADcam and verify preview/recording
+![Step 3 - Open RADcam and record](docs/screenshots/step3-open-radcam.svg)
+
 ## Build and run details
 
 1. Install dependencies.
