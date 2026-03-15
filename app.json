@@ -8,6 +8,7 @@
     "plugins": [
       "expo-dev-client",
       "./modules/radcam-multicam/app.plugin.js"
+      "./modules/radcam-multicam"
     ],
     "ios": {
       "supportsTablet": false,

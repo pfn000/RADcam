@@ -12,6 +12,7 @@
     "run:ios": "bash ./scripts/run-ios.sh",
     "cloud:ios": "bash ./scripts/cloud-ios-build.sh",
     "android": "expo run:android"
+    "run:ios": "bash ./scripts/run-ios.sh"
   },
   "dependencies": {
     "expo": "~51.0.28",
@@ -20,6 +21,7 @@
     "react": "18.2.0",
     "react-native": "0.74.5",
     "radcam-multicam": "file:modules/radcam-multicam"
+    "react-native": "0.74.5"
   },
   "devDependencies": {
     "@types/react": "~18.2.79",
