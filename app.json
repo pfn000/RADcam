@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "RADcam",
+    "slug": "radcam",
+    "version": "0.1.0",
+    "scheme": "radcam",
+    "orientation": "portrait",
+    "plugins": [
+      "expo-dev-client",
+      "./modules/radcam-multicam/app.plugin.js"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.opensource.radcam",
+      "infoPlist": {
+        "NSCameraUsageDescription": "RADcam captures synchronized rear camera streams for recording and preview.",
+        "NSMicrophoneUsageDescription": "Microphone is optional and used when recording with audio."
+      }
+    }
+  }
+}
